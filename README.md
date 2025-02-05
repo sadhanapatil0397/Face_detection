@@ -1,2 +1,3 @@
 # Face_detection
-face detection using AI models
+Face detection using AI models.
+This is python base project.
