@@ -1,0 +1,21 @@
+name: Run Tests
+ 
+on: [push, pull_request]
+ 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+ 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Use any version you prefer
+ 
+      - name: Install dependencies
+        run: pip install -r requirements.txt || true  # Skip if no requirements.txt
+ 
+      - name: Run tests
+        run: python -m unittest test_file.py  # Change this to your actual test file
